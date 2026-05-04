@@ -32,4 +32,9 @@ public class UsuarioService {
     public List<Usuario> listarTodos() {
         return repo.findAll();
     }
+
+    public Usuario buscarPorEmail(String email) {
+        return repo.findByEmail(email)
+            .orElseThrow(() -> new RuntimeException("Usuario no encontrado: " + email));
+    }
 }
