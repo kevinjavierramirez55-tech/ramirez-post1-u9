@@ -1,8 +1,43 @@
-# Ramirez Post-Contenido 1 Unidad 9
+# Sistema de Autenticación con Spring Security 6
 
-Proyecto Spring Boot del Post-Contenido de la Unidad 8 actualizado para la Unidad 9:
-autenticacion con Spring Security 6, registro con BCrypt, login por formulario y
-autorizacion por roles `ROLE_ADMIN` y `ROLE_USER`.
+## Autor
+
+- **Nombre:** Kevin Ramirez  
+- **Código:** 02220131008  
+- **Programa:** Ingeniería de Sistemas  
+- **Unidad:** 9 Seguridad en Aplicaciones web  
+- **Actividad:** Post-Contenido 1 
+- **Fecha:** 04/05/2026 
+
+---
+
+## Descripción del Proyecto
+
+Este proyecto implementa un sistema completo de autenticación y autorización utilizando **Spring Boot + Spring Security 6**, conectado a **MySQL**.
+
+Incluye:
+
+- Registro de usuarios con contraseñas encriptadas (BCrypt)
+- Login personalizado con formulario
+- Autenticación basada en base de datos
+- Autorización por roles:
+  - `ADMIN`
+  - `USER`
+- Protección de rutas
+- Panel de administración restringido
+
+---
+
+## Objetivo
+
+Implementar un sistema seguro que:
+
+- Almacene contraseñas de forma segura (hash BCrypt)
+- Permita autenticación desde base de datos
+- Controle el acceso según roles
+- Proteja rutas con Spring Security
+
+---
 
 ## Tecnologias
 
@@ -99,25 +134,30 @@ El hash anterior fue generado con BCrypt costo 12 para la contrasenia de prueba
 - El dashboard muestra el nombre del usuario autenticado y opciones visibles por
   rol con Thymeleaf Security.
 
-## Validacion requerida por la rubrica
+---
 
-1. Entrar a `/dashboard` sin sesion: debe redirigir a `/login`.
-2. Registrar usuario desde `/registro`: en MySQL la columna `contrasenia` debe
-   empezar por `$2a$12$`.
-3. Iniciar sesion como usuario registrado: debe ver el dashboard y el mensaje de
-   acceso de usuario estandar.
-4. Entrar a `/admin` como `ROLE_USER`: debe mostrar `403 Forbidden`.
-5. Iniciar sesion como `admin@universidad.edu` con `admin123`: debe mostrar el
-   panel de administracion y la lista de usuarios.
-6. Cerrar sesion: debe redirigir a `/login?logout` e invalidar la sesion.
+## Capturas del Proyecto
 
-## Capturas para entregar
+Las capturas se encuentran en la carpeta `evidencias/`.
 
-Guardar en la carpeta `evidencias/`:
+### Correr aplicación 
 
-- `login.png`: formulario personalizado de login.
-- `dashboard-user.png`: dashboard con usuario `ROLE_USER`.
-- `panel-admin.png`: panel de administracion con lista de usuarios.
-- `error-403-user.png`: acceso denegado al entrar a `/admin` como usuario normal.
-- `bcrypt-mysql.png`: evidencia en MySQL de una contrasenia iniciando con
-  `$2a$12$`.
+![login](evidencias/login.png)
+
+### Contraseña hasheada con BCrypt
+
+![bcrypt](evidencias/bcrypt-mysql.png)
+
+### Dashboard de usuario
+
+![dashboard](evidencias/dashboard-usuario.png)
+
+
+### Error 403 Forbidden
+
+![post](evidencias/peticion%20POST-api-productos-201.png)
+
+### Panel de Administración
+
+![panel admin](evidencias/panel-admin.png)
+
