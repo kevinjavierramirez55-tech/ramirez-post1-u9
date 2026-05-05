@@ -27,7 +27,7 @@ FLUSH PRIVILEGES;
 La aplicacion usa:
 
 ```properties
-spring.datasource.url=jdbc:mysql://localhost:3307/estudiantes_db?useSSL=false&serverTimezone=UTC
+spring.datasource.url=jdbc:mysql://localhost:3306/estudiantes_db?useSSL=false&serverTimezone=UTC
 spring.datasource.username=appuser
 spring.datasource.password=apppass
 spring.jpa.hibernate.ddl-auto=update
@@ -52,8 +52,8 @@ Abrir:
 - `http://localhost:8080/dashboard`
 - `http://localhost:8080/admin`
 
-La conexion de MySQL esta configurada en el puerto `3307`. Si MySQL esta en
-`3306`, cambiar el puerto en `src/main/resources/application.properties`.
+La conexion de MySQL esta configurada en el puerto `3306`, que es el puerto
+normal de MySQL en XAMPP.
 
 ## Usuarios de prueba
 
